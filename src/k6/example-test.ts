@@ -11,7 +11,8 @@ export let options: Options = {
 
 export default async function () {
     const browser = chromium.launch({
-        headless: true
+        headless: true,
+        args: ['no-sandbox'],
     });
     const context = browser.newContext();
     const page = context.newPage();
